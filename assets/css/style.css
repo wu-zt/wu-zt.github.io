@@ -1,3 +1,4 @@
+/* --- 基础样式和“少女感”配色 --- */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -17,7 +18,10 @@ header {
     color: #ffffff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #FFB3D1 3px solid; /* 保留你修改的粉色边框 */
+    border-bottom: #FFB3D1 3px solid; /* 您的粉色边框 */
+
+    /* 为切换按钮的定位做准备 */
+    position: relative;
 }
 header h1 {
     text-align: center;
@@ -25,14 +29,12 @@ header h1 {
     margin: 0;
 }
 nav {
-    /* *** 修复点 1: 恢复导航栏背景色，否则文字看不见 *** */
     background: #A36F8E;      /* 中等紫色/藕荷色 */
     color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 nav a {
-    /* *** 修复点 2: 恢复导航栏链接文字颜色 *** */
     color: #fff;
     text-decoration: none;
     padding: 5px 20px;
@@ -40,8 +42,7 @@ nav a {
 nav a:hover {
     background: #F7A3C8;
     color: #5D4050;
-} /* <-- *** 修复点 3: 加上了缺失的右花括号 } *** */
-
+}
 section {
     background: #ffffff;
     padding: 20px;
@@ -51,43 +52,123 @@ section {
 footer {
     text-align: center;
     padding: 20px;
-    /* *** 修复点 4: 恢复页脚配色 *** */
     background: #7A4365;
     color: #ffffff;
     margin-top: 20px;
 }
+
+/* --- 个人简介“盒子”布局 (左图右文) --- */
+.intro-box {
+    display: flex;         /* 开启 Flexbox 布局 */
+    align-items: center;   /* 垂直居中对齐 */
+    margin-bottom: 20px;
+}
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 圆形 */
+    object-fit: cover;
+    border: 3px solid #F7A3C8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;    /* 防止图片被压缩 */
+    margin-right: 25px;/* 图片右侧间距 */
+}
+.intro-box p {
+    margin: 0; /* 移除段落默认边距 */
+}
+
+/* --- 教育经历“框框”样式 --- */
 .education-box {
     background: #FEFBFD;
     border: 1px solid #E0BBE4;  /* 淡紫色边框 */
     border-radius: 5px;
     padding: 15px;
     margin-top: 15px;
-
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
-.intro-box {
-    display: flex;         /* 关键！开启 Flexbox 布局 */
-    align-items: center;   /* 让图片和文字垂直居中对齐 */
-    margin-bottom: 20px;
+
+/* --- 研究项目“框框”样式 --- */
+.project-box {
+    background: #FEFBFD;
+    border: 1px solid #E0BBE4;  /* 淡紫色边框 */
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project-box h3 {
+    color: #7A4365; /* 项目标题颜色 */
 }
 
-/* 个人照片样式 */
-.profile-image {
-    width: 180px;      /* 保持您喜欢的尺寸 */
-    height: 180px;
-    border-radius: 50%; /* 圆形 */
-    object-fit: cover;
-    border: 3px solid #F7A3C8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* ---
+ * --- 昼夜模式切换按钮和黑夜模式样式 ---
+ * ---
+*/
 
-    /* --- Flexbox 布局下的关键样式 --- */
-    flex-shrink: 0;    /* 防止图片在窗口缩小时被压扁 */
-    margin-right: 25px;/* 在图片右侧添加 25px 间距，隔开文字 */
+/* 按钮样式 */
+#theme-toggle-button {
+    position: absolute;  /* 绝对定位 */
+    top: 25px;           /* 距离顶部 */
+    right: 30px;         /* 距离右侧 */
+
+    background-color: #A36F8E; /* 按钮颜色 */
+    color: #fff;
+    border: 1px solid #7A4365;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* 圆形按钮 */
+    font-size: 20px;
+    cursor: pointer;     /* 鼠标悬停时显示手型 */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* 盒子里面的文字段落 */
-.intro-box p {
-    margin: 0; /* 移除段落的默认上下边距，使其与图片完美对齐 */
+#theme-toggle-button:hover {
+    background-color: #F7A3C8; /* 悬停时是你喜欢的粉色 */
+    color: #5D4050;
+    transform: scale(1.1); /* 轻微放大 */
+}
+
+/* 核心：黑夜模式 (Dark Mode) 样式 */
+body.dark-mode {
+    background-color: #3d2c42; /* 深紫色背景 */
+    color: #f0e6f2;            /* 浅紫色文字 */
+}
+
+body.dark-mode header {
+    background: #2a1d2e;             /* 更深的页眉 */
+    border-bottom-color: #A36F8E;    /* 保留一些识别色 */
+}
+
+body.dark-mode nav {
+    background: #5D4050; /* 使用较暗的紫色 */
+}
+
+body.dark-mode section {
+    background: #503d55; /* 内容区域背景 */
+}
+
+body.dark-mode .education-box,
+body.dark-mode .project-box {
+    background: #46354b;
+    border-color: #7A4365;
+}
+
+body.dark-mode h2 {
+    color: #E0BBE4; /* 淡紫色标题 */
+}
+
+body.dark-mode .project-box h3 {
+    color: #F7A3C8; /* 项目标题用粉色高亮 */
+}
+
+body.dark-mode .profile-image {
+    border-color: #F7A3C8; /* 头像边框也用粉色 */
+}
+
+body.dark-mode footer {
+    background: #2a1d2e; /* 和页眉一致 */
 }
