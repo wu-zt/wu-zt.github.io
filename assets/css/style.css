@@ -1,0 +1,28 @@
+h1{
+    color: red;
+}
+
+.title-h1{
+    font-size: 5em;
+    color: aqua;
+}
+#ttt{
+    color:greenyellow;
+}
+
+.div-class{
+    font-size: 4em;
+}
+
+.div-class span{
+    color: blue;
+}
+
+.div-class .div-contain{
+    color: blueviolet;
+}
+
+.div-class #div-link{
+    text-decoration: underline;
+    cursor: pointer;
+}
