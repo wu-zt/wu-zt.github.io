@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Homepage</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
 <header>
+    <div class="header-social-links">
+        <a href="https://github.com/wu-zt" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://steamcommunity.com/profiles/76561199210332699/" target="_blank" title="Steam">
+            <i class="fa-brands fa-steam"></i>
+        </a>
+        <a href="https://www.instagram.com/to.ngtong924?igsh=MWI4eTR2eGp2MW1rMw%3D%3D&utm_source=qr" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="mailto:[wu204080@gmail.com]" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </div>
+
     <h1>ZITONG WU</h1>
 
     <button id="theme-toggle-button">
@@ -36,7 +52,7 @@
             <img src="./assets/img/avatar.jpg" alt="ZITONG WU's Profile Picture" class="profile-image">
 
             <p>
-                Hello！ I'm ZITONG WU, and you can call me wu. I come from TianJin, China. Now I am living in Ibaraki，Japan for my master degree. <br>
+                Hello！I'm ZITONG WU, and you can call me wu. I come from TianJin, China. Now I am living in Ibaraki，Japan for my master degree. <br>
                 I studies in Computer Science at the University of Tsukuba, where my research focused on applying Evolutionary Computation to Voxel-Soft Robots.<br>
                 Prior to that, I finished my undergraduate degree in Digital Media Technology from TianJin Foreign Studies University.<br>
             </p>
@@ -59,14 +75,19 @@
 
         <div class="education-box">
             <h3>Bachelor in Digital Media Technology - Tianjin Foreign Studies University</h3>
-
             <p><em>2020 - 2024</em></p>
 
             <ul>
-                <li>Minor: Japanese Language Degree</li>
-                <li>Core Skills: Programming (e.g., C#,python), Unity Game Development</li>
-                <li>Media Skills: Video & Image Editing (e.g., Adobe Premiere, Photoshop)</li>
-                <li>3D Skills: 3D Modeling (e.g., 3Dmax, Blender)</li>
+                <li><strong>Minor:</strong> Japanese Language Degree</li>
+                <li>
+                    <strong>Extra Curricular:</strong>
+                    Joined the <strong>English Association</strong>;
+                    Served as <strong>minister</strong> of the New Media Center Department.
+                </li>
+
+                <li><strong>Core Skills:</strong> Programming (e.g., C#,python), Unity Game Development</li>
+                <li><strong>Media Skills:</strong> Video & Image Editing (e.g., Adobe Premiere, Photoshop)</li>
+                <li><strong>Skills:</strong> 3D Modeling (e.g., 3Dmax, Blender)</li>
             </ul>
         </div>
 
@@ -88,7 +109,7 @@
         <ul>
             <li><strong>Chinese:</strong> Native</li>
             <li><strong>Japanese:</strong>  JLPT N1 </li>
-            <li><strong>English:</strong> TOEIC 685, daily conversation ok :D</li>
+            <li><strong>English:</strong> TOEIC 685, daily conversation ok.</li>
         </ul>
     </section>
 </div>
@@ -96,13 +117,30 @@
 <footer>
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>
-            这里是您的联系方式。
-            (Your contact information goes here.)
+
+        <p class="contact-message">
+            <br>Feel free to reach out via Email or connect with me on Instagram :D
         </p>
-        <p>Email: [your.email@example.com] | LinkedIn: [your-linkedin-profile] | GitHub: [your-github]</p>
+
+        <div class="footer-social-links">
+            <a href="mailto:[your.email@example.com]" title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://github.com/wu-zt" target="_blank" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <a href="[path/to/your/CV.pdf]" class="resume-button" target="_blank">Download My Resume (CV)</a>
+
+        <p class="copyright">
+            © 2025 ZITONG WU. All Rights Reserved.
+        </p>
+
     </section>
 </footer>
+
 <script src="assets/js/script.js"></script>
 </body>
 </html>

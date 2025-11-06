@@ -172,3 +172,119 @@ body.dark-mode .profile-image {
 body.dark-mode footer {
     background: #2a1d2e; /* 和页眉一致 */
 }
+/* --- 页眉社交图标 (左上角) --- */
+.header-social-links {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.header-social-links a {
+    font-size: 24px;     /* 图标大小 */
+    color: #ffffff;      /* 图标颜色 (白色) */
+    margin-right: 15px;  /* 图标间距 */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.header-social-links a:hover {
+    color: #F7A3C8;       /* 悬停时是粉色 */
+    transform: scale(1.2); /* 放大 */
+}
+
+
+/* --- 黑夜模式下的页眉图标 --- */
+body.dark-mode .header-social-links a {
+    color: #f0e6f2; /* 黑夜模式下的浅紫色 */
+}
+
+body.dark-mode .header-social-links a:hover {
+    color: #F7A3C8; /* G's response 悬停时依然是粉色 */
+}
+/* ---
+ * --- 页脚 (Footer) / Contact Me 样式 ---
+ * ---
+*/
+
+/* 页脚的 <section> 基础样式 */
+footer section#contact {
+    background: none; /* 移除白色背景 */
+    margin-top: 0;
+    padding-bottom: 30px; /* 增加底部空间 */
+}
+
+/* 1. "行动号召" 文字样式 */
+.contact-message {
+    color: #ffffff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* 2. 页脚社交图标 (和页眉的分开) */
+.footer-social-links {
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+.footer-social-links a {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+.footer-social-links a:hover {
+    color: #F7A3C8;       /* 悬停时是粉色 */
+    transform: scale(1.2);
+}
+
+/* 3. "下载简历" 按钮样式 */
+.resume-button {
+    display: inline-block; /* 允许设置 padding 和 margin */
+    background-color: #F7A3C8; /* 按钮用粉色 */
+    color: #5D4050;           /* 按钮文字用深紫色 */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 30px;
+}
+.resume-button:hover {
+    background-color: #ffffff; /* 悬停时变白色 */
+    transform: scale(1.05);
+}
+
+/* 4. 版权文字 */
+.copyright {
+    font-size: 0.9em;
+    color: #A36F8E; /* 用一个柔和的颜色 */
+    margin-top: 20px;
+}
+
+
+/* --- 黑夜模式下的页脚 --- */
+body.dark-mode .contact-message {
+    color: #f0e6f2;
+}
+
+body.dark-mode .footer-social-links a {
+    color: #f0e6f2;
+}
+body.dark-mode .footer-social-links a:hover {
+    color: #F7A3C8;
+}
+
+body.dark-mode .resume-button {
+    background-color: #F7A3C8;
+    color: #3d2c42;
+}
+body.dark-mode .resume-button:hover {
+    background-color: #E0BBE4; /* 黑夜模式下悬停变淡紫色 */
+}
+
+body.dark-mode .copyright {
+    color: #A36F8E;
+}
