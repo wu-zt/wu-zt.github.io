@@ -1,219 +1,174 @@
-/* --- 基础样式和“少女感”配色 --- */
+/* =========================================
+   基础样式 & 奶油色日间模式 (Light Mode)
+========================================= */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #FFF8FB; /* 极淡的粉色背景 */
-    color: #5D4050;           /* 深紫色文字 */
+    background-color: #FBF2D2; /* 奶油色背景 */
+    color: #5D4050;           /* 深咖啡/紫文字，保持阅读质感 */
     margin: 0;
     padding: 0;
 }
+
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
     padding: 20px;
 }
+
+/* --- 页眉 (Header) --- */
 header {
-    background: #7A4365;
+    background: #E6A071;      /* 焦糖橘 */
     color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #FFB3D1 3px solid; /* 您的粉色边框 */
-
-    /* 为切换按钮的定位做准备 */
-    position: relative;
+    padding: 40px 0;
+    min-height: 80px;
+    border-bottom: #FCDDA3 5px solid;
+    position: relative;       /* 必须保留，为了按钮定位 */
+    text-align: center;
 }
+
 header h1 {
-    text-align: center;
-    text-transform: uppercase;
     margin: 0;
-}
-nav {
-    background: #A36F8E;      /* 中等紫色/藕荷色 */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-}
-nav a:hover {
-    background: #F7A3C8;
-    color: #5D4050;
-}
-section {
-    background: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #7A4365;
-    color: #ffffff;
-    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 2px;
 }
 
-/* --- 个人简介“盒子”布局 (左图右文) --- */
-.intro-box {
-    display: flex;         /* 开启 Flexbox 布局 */
-    align-items: center;   /* 垂直居中对齐 */
-    margin-bottom: 20px;
-}
-.profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* 圆形 */
-    object-fit: cover;
-    border: 3px solid #F7A3C8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;    /* 防止图片被压缩 */
-    margin-right: 25px;/* 图片右侧间距 */
-}
-.intro-box p {
-    margin: 0; /* 移除段落默认边距 */
-}
-
-/* --- 教育经历“框框”样式 --- */
-.education-box {
-    background: #FEFBFD;
-    border: 1px solid #E0BBE4;  /* 淡紫色边框 */
-    border-radius: 5px;
-    padding: 15px;
-    margin-top: 15px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- 研究项目“框框”样式 --- */
-.project-box {
-    background: #FEFBFD;
-    border: 1px solid #E0BBE4;  /* 淡紫色边框 */
-    border-radius: 5px;
-    padding: 15px;
-    margin-top: 15px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.project-box h3 {
-    color: #7A4365; /* 项目标题颜色 */
-}
-
-/* ---
- * --- 昼夜模式切换按钮和黑夜模式样式 ---
- * ---
-*/
-
-/* 按钮样式 */
+/* 昼夜模式切换按钮 */
 #theme-toggle-button {
-    position: absolute;  /* 绝对定位 */
-    top: 25px;           /* 距离顶部 */
-    right: 30px;         /* 距离右侧 */
-
-    background-color: #A36F8E; /* 按钮颜色 */
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background-color: #D48C5C;
     color: #fff;
-    border: 1px solid #7A4365;
+    border: 2px solid #FCDDA3;
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* 圆形按钮 */
+    border-radius: 50%;
     font-size: 20px;
-    cursor: pointer;     /* 鼠标悬停时显示手型 */
-    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 100;
 }
 
 #theme-toggle-button:hover {
-    background-color: #F7A3C8; /* 悬停时是你喜欢的粉色 */
+    background-color: #FCDDA3;
     color: #5D4050;
-    transform: scale(1.1); /* 轻微放大 */
+    transform: scale(1.1);
 }
 
-/* 核心：黑夜模式 (Dark Mode) 样式 */
-body.dark-mode {
-    background-color: #3d2c42; /* 深紫色背景 */
-    color: #f0e6f2;            /* 浅紫色文字 */
-}
-
-body.dark-mode header {
-    background: #2a1d2e;             /* 更深的页眉 */
-    border-bottom-color: #A36F8E;    /* 保留一些识别色 */
-}
-
-body.dark-mode nav {
-    background: #5D4050; /* 使用较暗的紫色 */
-}
-
-body.dark-mode section {
-    background: #503d55; /* 内容区域背景 */
-}
-
-body.dark-mode .education-box,
-body.dark-mode .project-box {
-    background: #46354b;
-    border-color: #7A4365;
-}
-
-body.dark-mode h2 {
-    color: #E0BBE4; /* 淡紫色标题 */
-}
-
-body.dark-mode .project-box h3 {
-    color: #F7A3C8; /* 项目标题用粉色高亮 */
-}
-
-body.dark-mode .profile-image {
-    border-color: #F7A3C8; /* 头像边框也用粉色 */
-}
-
-body.dark-mode footer {
-    background: #2a1d2e; /* 和页眉一致 */
-}
-/* --- 页眉社交图标 (左上角) --- */
+/* 页眉左上角社交图标 */
 .header-social-links {
     position: absolute;
     top: 30px;
     left: 30px;
+    z-index: 100;
 }
 
 .header-social-links a {
-    font-size: 24px;     /* 图标大小 */
-    color: #ffffff;      /* 图标颜色 (白色) */
-    margin-right: 15px;  /* 图标间距 */
+    font-size: 24px;
+    color: #ffffff;
+    margin-right: 15px;
     text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
+    transition: 0.3s;
 }
 
 .header-social-links a:hover {
-    color: #F7A3C8;       /* 悬停时是粉色 */
-    transform: scale(1.2); /* 放大 */
+    color: #FCDDA3;
+    transform: scale(1.2);
 }
 
-
-/* --- 黑夜模式下的页眉图标 --- */
-body.dark-mode .header-social-links a {
-    color: #f0e6f2; /* 黑夜模式下的浅紫色 */
+/* --- 导航栏 (Nav) --- */
+nav {
+    background: #D48C5C;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
 
-body.dark-mode .header-social-links a:hover {
-    color: #F7A3C8; /* G's response 悬停时依然是粉色 */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
 }
-/* ---
- * --- 页脚 (Footer) / Contact Me 样式 ---
- * ---
-*/
 
-/* 页脚的 <section> 基础样式 */
-footer section#contact {
-    background: none; /* 移除白色背景 */
+nav a:hover {
+    background: #FCDDA3;
+    color: #5D4050;
+}
+
+/* --- 内容区块 (Section) --- */
+section {
+    background: #ffffff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 1px solid #FCDDA3;
+    box-shadow: 0 4px 10px rgba(230, 160, 113, 0.1);
+}
+
+/* 个人简介布局 */
+.intro-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FCDDA3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+/* 教育与项目经历框框 */
+.education-box, .project-box {
+    background: #FFFBF0;
+    border: 2px dashed #FCDDA3;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    box-sizing: border-box; /* 防止宽度溢出错位 */
+}
+
+.project-box h3 {
+    color: #D48C5C;
     margin-top: 0;
-    padding-bottom: 30px; /* 增加底部空间 */
 }
 
-/* 1. "行动号召" 文字样式 */
+
+/* =========================================
+   页脚与联系方式 (Footer & Contact)
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #D48C5C;
+    color: #ffffff;
+    margin-top: 40px;
+}
+
+/* 关键修复：去除页脚内 section 的白色卡片样式，防止文字隐身 */
+footer section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+}
+
 .contact-message {
     color: #ffffff;
     font-size: 1.1em;
@@ -221,70 +176,125 @@ footer section#contact {
     margin-bottom: 25px;
 }
 
-/* 2. 页脚社交图标 (和页眉的分开) */
 .footer-social-links {
     text-align: center;
     padding: 10px 0;
     margin-bottom: 25px;
 }
+
 .footer-social-links a {
     font-size: 28px;
     color: #ffffff;
     margin: 0 15px;
     text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
+    transition: 0.3s;
 }
+
 .footer-social-links a:hover {
-    color: #F7A3C8;       /* 悬停时是粉色 */
+    color: #FCDDA3;
     transform: scale(1.2);
 }
 
-/* 3. "下载简历" 按钮样式 */
+/* 下载简历按钮 */
 .resume-button {
-    display: inline-block; /* 允许设置 padding 和 margin */
-    background-color: #F7A3C8; /* 按钮用粉色 */
-    color: #5D4050;           /* 按钮文字用深紫色 */
-    padding: 12px 25px;
-    border-radius: 5px;
+    display: inline-block;
+    background-color: #FCDDA3;
+    color: #5D4050;
+    padding: 12px 30px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
     margin-bottom: 30px;
-}
-.resume-button:hover {
-    background-color: #ffffff; /* 悬停时变白色 */
-    transform: scale(1.05);
+    transition: 0.3s;
+    border: 2px solid transparent;
 }
 
-/* 4. 版权文字 */
+.resume-button:hover {
+    background-color: #ffffff;
+    border: 2px solid #FCDDA3;
+    transform: translateY(-3px);
+}
+
 .copyright {
     font-size: 0.9em;
-    color: #A36F8E; /* 用一个柔和的颜色 */
+    color: #FBF2D2;
     margin-top: 20px;
 }
 
 
-/* --- 黑夜模式下的页脚 --- */
+/* =========================================
+   黑夜模式 (Dark Mode)
+========================================= */
+
+body.dark-mode {
+    background-color: #2D241E; /* 深咖色背景 */
+    color: #FBF2D2;            /* 奶油色文字 */
+}
+
+/* 黑夜模式的页眉和页脚 */
+body.dark-mode header,
+body.dark-mode footer {
+    background: #1F1814;
+    border-color: #D48C5C;
+}
+
+body.dark-mode header h1 {
+    color: #FCDDA3;
+}
+
+/* 黑夜模式的导航栏修复 */
+body.dark-mode nav {
+    background: #1F1814;
+    border-bottom: 1px solid #3D322A;
+}
+
+body.dark-mode nav a {
+    color: #FBF2D2;
+}
+
+body.dark-mode nav a:hover {
+    background: #5D4050;
+    color: #FCDDA3;
+}
+
+/* 黑夜模式的内容卡片 */
+body.dark-mode section {
+    background: #3D322A;
+    border-color: #D48C5C;
+    box-shadow: none;
+}
+
+body.dark-mode .education-box,
+body.dark-mode .project-box {
+    background: #2D241E;
+    border-color: #D48C5C;
+}
+
+/* 黑夜模式的按钮和图标 */
+body.dark-mode #theme-toggle-button {
+    background-color: #3D322A;
+    border-color: #D48C5C;
+}
+
+body.dark-mode .header-social-links a,
+body.dark-mode .footer-social-links a,
 body.dark-mode .contact-message {
-    color: #f0e6f2;
+    color: #FBF2D2;
 }
 
-body.dark-mode .footer-social-links a {
-    color: #f0e6f2;
-}
+body.dark-mode .header-social-links a:hover,
 body.dark-mode .footer-social-links a:hover {
-    color: #F7A3C8;
+    color: #FCDDA3;
 }
 
+/* 黑夜模式简历按钮 */
 body.dark-mode .resume-button {
-    background-color: #F7A3C8;
-    color: #3d2c42;
-}
-body.dark-mode .resume-button:hover {
-    background-color: #E0BBE4; /* 黑夜模式下悬停变淡紫色 */
+    background-color: #D48C5C;
+    color: #ffffff;
 }
 
-body.dark-mode .copyright {
-    color: #A36F8E;
+body.dark-mode .resume-button:hover {
+    background-color: #3D322A;
+    color: #FCDDA3;
+    border-color: #D48C5C;
 }
